@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+a.chordSelect {
+  margin: 2px;
+  cursor: pointer;
+  border: 1px solid;
+  display: inline-block;
+  padding: 2px;
+}
+
+.notes-display {
+  border: 1px solid olive;
+  background: olivedrab;
+}
+
+.debug-output {
+  max-width: 800px;
+  margin: auto;
+}
+
+dl.chordDl {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
