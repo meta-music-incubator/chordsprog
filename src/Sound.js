@@ -29,7 +29,7 @@ export class Sound extends React.Component {
   render() {
     return (
       <div>
-        {this.props.keys}
+        {/* {this.props.keys} */}
         <button onClick={this.play}>Play Test Tone</button>
       </div>
     );

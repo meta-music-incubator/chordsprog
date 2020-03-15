@@ -10,7 +10,6 @@ import { chord } from "@tonaljs/chord";
 export class App extends React.Component {
   constructor(props) {
     super(props);
-    this.chords = ["cmaj7", "dmaj7", "cmin7", "a", "amaj", "amin"];
     this.state = {
       keys: [],
       autoplay: false,
@@ -20,7 +19,7 @@ export class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setChord(this.chords[0]);
+    this.setChord("C");
   }
 
   setChord(chordName) {
@@ -38,38 +37,28 @@ export class App extends React.Component {
   }
 
   render() {
-    const chordsList = this.chords
-      .map((chName, i) => ({ name: chName, key: chName + i }))
-      .map(ch => (
-        <button
-          className="chordSelect"
-          onClick={e => this.setChord(ch.name)}
-          key={ch.key}
-        >
-          {ch.name}
-        </button>
-      ));
-
     return (
       <div className="App">
-        {chordsList}
         <div id="notes">
-          <Sound keys={this.state.keys}></Sound>
-          <FlowTest></FlowTest>
+          <div>
+            <ChordInput
+              className="chord-input"
+              onChordChange={this.cordChanged}
+              chord={this.state.chordName}
+            ></ChordInput>
+          </div>
+          <div>
+            <Sound keys={this.state.keys}></Sound>
+          </div>
+          {/* <FlowTest></FlowTest> */}
           <Notes keys={this.state.keys}></Notes>
         </div>
         <div>
-          <pre>
+          {/* <pre>
             <textarea value={JSON.stringify(this.state.currentChord)} readOnly></textarea>
-          </pre>
+          </pre> */}
           <ChordInfo chord={this.state.currentChord}></ChordInfo>
         </div>
-        {/* <div>
-          <ChordInput className="chord-input"
-            onChordChange={this.cordChanged}
-            chord={this.state.chordName}
-          ></ChordInput>
-        </div> */}
       </div>
     );
   }
