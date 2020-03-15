@@ -7,7 +7,7 @@ export class ChordInfo extends React.Component {
   }
   render() {
     return (
-      <dl class="chordDl">
+      <dl className="chordDl">
         <dt>Name</dt>
         <dd>{this.props.chord.name}</dd>
         <dt>Type</dt>

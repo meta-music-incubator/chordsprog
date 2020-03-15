@@ -3,6 +3,9 @@ import Vex from "vexflow";
 
 const VF = Vex.Flow;
 
+/**
+ * Display the chord in musical notation
+ */
 export class Notes extends React.Component {
 
   constructor(props) {
@@ -73,8 +76,22 @@ export class Notes extends React.Component {
         clef: "treble",
         keys: keys,
         duration: "w"
-      })
+      }),
     ];
+
+    for(var i=0; i < keys.length; i++) {
+      var accent = keys[i].charAt(1);
+      if (accent === '#') {
+        notes[0].addAccidental(i, new VF.Accidental("#"));
+      }
+      if (accent === "b") {
+        notes[0].addAccidental(i, new VF.Accidental("b"));
+      }
+
+    }
+
+    console.log(keys);
+    console.log(notes);
 
     // Create a voice in 4/4 and add above notes
     var voice = new VF.Voice({ num_beats: 4, beat_value: 4 });

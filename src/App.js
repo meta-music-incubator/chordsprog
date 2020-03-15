@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { Notes } from "./Notes";
 import { Sound } from "./Sound";
+import { FlowTest } from "./vexflow";
 import { ChordInput } from "./ChordInput";
 import { ChordInfo } from "./ChordInfo";
 import { chord } from "@tonaljs/chord";
@@ -54,20 +55,21 @@ export class App extends React.Component {
         {chordsList}
         <div id="notes">
           <Sound keys={this.state.keys}></Sound>
+          <FlowTest></FlowTest>
           <Notes keys={this.state.keys}></Notes>
         </div>
         <div>
           <pre>
-            <textarea value={JSON.stringify(this.state.currentChord)}></textarea>
+            <textarea value={JSON.stringify(this.state.currentChord)} readOnly></textarea>
           </pre>
           <ChordInfo chord={this.state.currentChord}></ChordInfo>
         </div>
-        <div>
-          <ChordInput class="chord-input"
+        {/* <div>
+          <ChordInput className="chord-input"
             onChordChange={this.cordChanged}
             chord={this.state.chordName}
           ></ChordInput>
-        </div>
+        </div> */}
       </div>
     );
   }

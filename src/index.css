@@ -33,4 +33,5 @@ a.chordSelect {
 dl.chordDl {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  max-width: 20em;
 }

@@ -1,6 +1,9 @@
 import React from "react";
 import Tone from "tone";
 
+/**
+ * Play the chord.
+ */
 export class Sound extends React.Component {
   constructor(props) {
     super(props);
@@ -8,7 +11,7 @@ export class Sound extends React.Component {
     //a polysynth composed of 6 Voices of Synth
     this.synth = new Tone.PolySynth(8, Tone.Synth, {
       oscillator: {
-        type: "square"
+        type: "triangle"
       }
     }).toMaster();
 
