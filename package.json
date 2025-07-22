@@ -12,11 +12,11 @@
     "@types/react-dom": "^16.9.4",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0",
+    "react-scripts": "5.0.1",
     "tonal": "^2.2.2",
     "tone": "^13.8.25",
     "typescript": "^3.7.2",
-    "vexflow": "^1.2.89"
+    "vexflow": "^1.2.93"
   },
   "scripts": {
     "start": "react-scripts start",
