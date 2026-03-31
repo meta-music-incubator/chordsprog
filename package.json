@@ -16,7 +16,7 @@
     "tonal": "^2.2.2",
     "tone": "^13.8.25",
     "typescript": "^3.7.2",
-    "vexflow": "^1.2.89"
+    "vexflow": "^1.2.93"
   },
   "scripts": {
     "start": "react-scripts start",
